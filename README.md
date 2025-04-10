@@ -19,11 +19,6 @@ Diabeatix is an interactive Streamlit application featuring an AI assistant. Use
     source venv/bin/activate
     ```
 
-3.  **Install dependencies:**
-    *(Assuming you have a requirements.txt file)*
-    ```bash
-    pip install -r requirements.txt
-    ```
 
 ## Usage
 
