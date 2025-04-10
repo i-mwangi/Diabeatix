@@ -1,7 +1,6 @@
 # Diabeatix
 
-A Streamlit application. 
-*(Please add a more detailed description of the project here)*
+Diabeatix is an interactive Streamlit application featuring an AI assistant. Users can interact with the assistant via text or voice input. The application utilizes OpenAI Whisper for voice transcription, an external API (aimlapi.com) for text-to-speech generation, and Langflow to orchestrate different AI workflows, including a memory-based chatbot and potentially a Retrieval-Augmented Generation (RAG) system. The assistant responds both textually and audibly.
 
 ## Installation
 
