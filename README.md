@@ -34,4 +34,3 @@ Diabeatix is an interactive Streamlit application featuring an AI assistant. Use
 
 2.  Open your web browser and navigate to the local URL provided by Streamlit (usually `http://localhost:8501`).
 
-*(Add any other relevant usage instructions or configuration details here)* 
