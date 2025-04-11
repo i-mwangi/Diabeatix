@@ -1,5 +1,5 @@
 import streamlit_antd_components as sac
-from langflow.utils.load import load_flow_from_json
+from langflow import load_flow_from_json
 import streamlit as st
 import streamlit.components.v1 as components
 import base64
