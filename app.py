@@ -1,5 +1,5 @@
 import streamlit_antd_components as sac
-from langflow.load import run_flow_from_json
+from langflow.utils.load import load_flow_from_json
 import streamlit as st
 import streamlit.components.v1 as components
 import base64
@@ -131,10 +131,10 @@ def home_page():
     """, unsafe_allow_html=True)
     
     st.session_state['b64_image'] =""
-    with open("./Back.png.jpeg", "rb") as img_file:
+    with open("./Back.png", "rb") as img_file:
         img_back = base64.b64encode(img_file.read()).decode("utf-8")
-        # st.image(f'data:image/png;base64,{img_back}', use_column_width=False)
-        st.markdown(f"""<img class="back_img"  src="data:image/png;base64,{img_back}" alt="Frozen Image">""",unsafe_allow_html=True)
+        # st.image(f'data:image/jpeg;base64,{img_back}', use_column_width=False)
+        st.markdown(f"""<img class="back_img"  src="data:image/jpeg;base64,{img_back}" alt="Diabeatix Background">""",unsafe_allow_html=True)
     st.markdown("""<h1 class="Title">Welcome To Diabeatix</h1>""",unsafe_allow_html=True)
     
     
@@ -147,7 +147,7 @@ def chatBottt(prompt):
     "GroqModel-PEURW": {}
     }
 
-    result = run_flow_from_json(flow="Memory_Chatbot.json",
+    result = load_flow_from_json(flow="Memory_Chatbot.json",
                                 input_value=prompt,
                                 fallback_to_env_vars=True, # False by default
                                 tweaks=TWEAKS)
@@ -233,7 +233,7 @@ def RAG_ChatBot(prompt):
     "AIMLAPIEmbeddings-iAzCX": {}
     }
 
-    result = run_flow_from_json(flow="AIML_API_RAG_LANGFLOW.json",
+    result = load_flow_from_json(flow="AIML_API_RAG_LANGFLOW.json",
                                 input_value="message",
                                 fallback_to_env_vars=True, # False by default
                                 tweaks=TWEAKS)
@@ -249,7 +249,7 @@ def RAG_ChatBot(prompt):
 def Food_Helper():
     
     prompt = """
-        You are an expert meal prep AI assistant for diabetics. You need to see the Bhajia (" It has a golden-brown crust, melted cheese, and is topped with potato slices. One slice is being pulled away, highlighting the gooey cheese and the crispy edges of the bhajia") and calculate the total glycemic index in mg/dl, also provide the details of every food item in it with glycemic index intake in the following format:
+        You are an expert meal prep AI assistant for diabetics. You need to see the pizza ("a pepperoni pizza. It has a golden-brown crust, melted cheese, and is topped with evenly spaced pepperoni slices. One slice is being pulled away, highlighting the gooey cheese and the crispy edges of the pizza") and calculate the total glycemic index in mg/dl, also provide the details of every food item in it with glycemic index intake in the following format:
 
         Item 1 - glycemic index in mg/dl
         Item 2 - glycemic index in mg/dl
